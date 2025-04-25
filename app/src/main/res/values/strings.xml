@@ -1,6 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Mohamed-Landolsi-FindFriends</string>
+    <string name="app_name">FindFriends</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_friends">Friends</string>
+
+    <!-- Home Screen -->
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="request_friend_location">Request Friend Location</string>
+    <string name="permission_not_granted">Required permissions not granted</string>
+    <string name="sms_sent_success">SMS sent successfully</string>
+    <string name="sms_failed">Failed to send SMS</string>
+
+    <!-- Friends List -->
+    <string name="search_hint">Search friends</string>
+    <string name="view">View</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="friend_deleted">Friend deleted</string>
+    <string name="delete_failed">Failed to delete</string>
+    <string name="no_map_app">No map application found</string>
+    <string name="map_open_error">Could not open map</string>
+    <string name="update_not_implemented">Update functionality to be implemented</string>
+
+    <!-- Login -->
+    <string name="login">Login</string>
+    <string name="stay_logged_in">Stay logged in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <!-- Permissions -->
+    <string name="permissions_granted">All required permissions granted</string>
+    <string name="permissions_denied">Some permissions were denied. App functionality will be limited.</string>
+
+    <!-- Notifications -->
+    <string name="location_received">Location Received</string>
+    <string name="tap_to_view_map">Tap to view location on map</string>
+
+    <!-- Location Service -->
+    <string name="no_location">Could not determine location</string>
+    <string name="location_error">Failed to get location</string>
 </resources>

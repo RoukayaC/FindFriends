@@ -13,9 +13,10 @@
         android:id="@+id/text_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Demande position d'ami"
+        android:text="@string/request_friend_location"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_marginBottom="24dp" />
 
     <!-- Layout for input field and button -->
     <LinearLayout
@@ -25,25 +26,36 @@
         android:layout_marginTop="16dp">
 
         <!-- Input Field -->
-
-        <!-- Send SMS Button -->
-
-        <EditText
-            android:id="@+id/editTextNumber"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Saisir le numero"
-            android:inputType="phone"
-            android:minHeight="48dp"
-            android:padding="12dp" />
+            android:layout_marginEnd="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_phone_number"
+                android:inputType="phone"
+                android:minHeight="48dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Send SMS Button -->
         <Button
             android:id="@+id/btnsend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:padding="12dp"
-            android:text="SEND SMS" />
+            android:text="@string/send_sms" />
     </LinearLayout>
+
+    <!-- Information text -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="This app allows you to send an SMS to a friend requesting their location. Once they receive the SMS, their location will be sent back to you automatically."
+        android:textAlignment="center" />
 </LinearLayout>

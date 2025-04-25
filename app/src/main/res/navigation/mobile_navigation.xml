@@ -22,4 +22,10 @@
         android:name="roukaya.chelly.findfriends.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_friends"
+        android:name="roukaya.chelly.findfriends.ui.friends.FriendsListFragment"
+        android:label="Friends"
+        tools:layout="@layout/fragment_friends_list" />
 </navigation>

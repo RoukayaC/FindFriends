@@ -1,0 +1,21 @@
+<!-- layout/activity_login.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Other login fields here -->
+
+    <CheckBox
+        android:id="@+id/checkbox_stay_logged_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rester Authentifié" />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login" />
+</LinearLayout>
