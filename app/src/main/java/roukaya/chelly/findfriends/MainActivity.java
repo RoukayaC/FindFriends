@@ -1,5 +1,6 @@
 package roukaya.chelly.findfriends;
 
+
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -37,37 +38,38 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+        // Gestion des autorisations
 
-        //gestion des autorisation
+        // Tester si la permission est deja accordée
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED
+                &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            Constants.GPS_SMS_PERMISSION_STATS = true;
+        }
 
+        // Demande de permission
+        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.SEND_SMS,
+                Manifest.permission.READ_SMS,
+                Manifest.permission.RECEIVE_SMS,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.POST_NOTIFICATIONS
+        }, 1);
 
-
-        //demande de permission
-
-        ActivityCompat.requestPermissions(MainActivity.this,
-                new String[] {Manifest.permission.SEND_SMS} ,
-                1);
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String[] permissions,
-                                           @NonNull int[] grantResults
-                                           ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 1 )
-        {
-            if (grantResults.length> 0 ){
-
-                if (grantResults[0]== PackageManager.PERMISSION_GRANTED ){
-                    //permission accorde
-                }
-                else {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults, int deviceId) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults, deviceId);
+        if (requestCode == 1) {
+            if (grantResults.length > 0) {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[3] == PackageManager.PERMISSION_GRANTED) {
+                    // Autorisation accordée, on peut continuer
+                    Constants.GPS_SMS_PERMISSION_STATS = true;
+                } else {
                     finish();
                 }
-
-            }
-            else {
+            } else {
                 finish();
             }
         }
